@@ -1,0 +1,45 @@
+CHIP Memory20K {
+    IN in[16], load, address[15];
+    OUT out[16];
+
+    PARTS:
+    // дмуксим по старшим битам
+    DMux8Way(
+        in=load,
+        sel=address[12..14],
+        a=ram16kLoad,  // 11100..00 (12) = 28672
+        b=ram16kLoad1, 
+        c=ram16kLoad2,
+        d=ram16kLoad3,
+        e=screen,  
+        f=screen1, //10000..00 (12) = 16384 и 10100..00 = 20480
+        g=keyboardLoad,   //11000..00 = 24576
+        h=ram4kLoad);
+    Or(a=ram16kLoad, b=ram16kLoad1, out=loadOrLoad1);
+    Or(a=ram16kLoad2, b=ram16kLoad3, out=load2OrLoad3);
+    Or(a=loadOrLoad1, b=load2OrLoad3, out=loadForRam16K);
+    // RAM16K: занимает адреса 0x0000 - 0x3FFF (16K).
+    RAM16K(in=in, load=loadForRam16K, address=address[0..13], out=ram16kOut);
+    // Screen: занимает адреса 0x4000 - 0x5FFF (8K).
+    Or(a=screen, b=screen1, out=loadForScreen);
+    Screen(in=in, load=loadForScreen, address=address[0..12], out=screenOut);
+
+    // Keyboard: единственный регистр для адреса 0x6000.
+    Keyboard(out=keyboardOut);
+    // RAM4K: занимает адреса 0x7000 - 0x7FFF (4K).
+    RAM4K(in=in, load=ram4kLoad, address=address[0..11], out=ram4kOut);
+
+    // муксим по старшим битам
+    Mux8Way16(
+        a=ram16kOut,     // RAM 0x0000 - 0x1FFF
+        b=ram16kOut,     // RAM 0x0000 - 0x1FFF
+        c=ram16kOut,    // RAM 0x2000 - 0x3FFF
+        d=ram16kOut,    // RAM 0x2000 - 0x3FFF
+        e=screenOut,     // Screen 0x4000 - 0x5FFF
+        f=screenOut,   // Keyboard 0x6000
+        g=keyboardOut,
+        h=ram4kOut,
+        sel=address[12..14],
+        out=out
+    );
+}

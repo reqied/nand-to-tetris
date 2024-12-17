@@ -1,0 +1,76 @@
+CHIP CPU2 {
+
+    IN  inM[16],         // M value input  (M = contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to re-start the current
+                         // program (reset==1) or continue executing
+                         // the current program (reset==0).
+
+    OUT outM[16],        // M value output
+        writeM,          // Write to M? 
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // address of next instruction
+
+    PARTS:
+    // если instruction[15] = 0, то лежит A-инструкция (установка значения A)
+    // если instruction[15] = 1 , то лежит C-инструкцию (какая-то арифметическая операция)
+	Not(in=instruction[15],out=isAInstruction);
+    // выбор входа для регистра A
+    // если A-инстр. записываем instruction.
+    // если C-инстр. записываем результат ALU (если флаг 5 бит 1(пояснения строчка 51))
+	Mux16(a=aluOut,b=instruction,sel=isAInstruction,out=aRegisterInput);
+
+    // определяем, записывать ли значение в регистр A(случай если прилетела C-инструкция, 5..3 бит - dest, если 5 бит 1, записать в ARegister)
+	Or(a=isAInstruction,b=instruction[5],out=writeIntoA);
+    // регистр A хранит адрес (для M) или какую-то чиселку
+    //(пояснялка для меня)((за что отвечает арегистр: rогда новое значение должно быть записано в регистр A (через сигнал intoA)
+                        //Передаёт младшие 15 бит значения регистра A для управления памятью (addressM)
+                        //Предоставляет значение регистра A для других операций CPU (например, как вход ALU)))
+	ARegister(in=aRegisterInput,load=writeIntoA,out=AValue,out[0..14]=addressM);
+    // если флаг AorM = 1 - берем значение из памяти (M)
+    // если флаг AorM = 0 - берем значение из регистра A
+	Mux16(a=AValue,b=inM,sel=instruction[12],out=valueFromAorM);
+    // регистр D хранит значение, если в C-инструкции указан флаг loadD
+	And(a=instruction[15],b=instruction[4],out=intoD);
+
+    DMux(in=intoD, sel=instruction[14], a=toD2, b=toD1);
+
+	DRegister(in=aluOut,load=toD1,out=firstD);
+    Register(in=aluOut, load=toD2, out=SecondD);
+
+    Mux16(a=SecondD, b=firstD, sel=instruction[13], out=D);
+
+	//биты computation
+	ALU(x=D,y=valueFromAorM,zx=instruction[11],nx=instruction[10],zy=instruction[9],
+        ny=instruction[8],f=instruction[7],no=instruction[6],out=aluOut,out=outM,
+        zr=zr,ng=ng);
+    
+    // устанавливаем флаг записи в RAM (writeM)
+    // это возможно только при C-инструкции с нужным флагом
+	And(a=instruction[15],b=instruction[3],out=writeM);
+     // логика переходов (jump):
+    // ng и zr отвечают за прыг
+	Not(in=ng, out=positiveNum); // если ng = 0 (результат не отрицательный), то positiveNum = 1
+    Not(in=zr, out=notZero);     // если zr = 0 (результат не равен нулю), то notZero = 1
+
+    // jgt: переход если результат > 0 (positive и не ноль).
+    // instruction[0] означает, что бит jgt включен
+    // jgt = 1, если C-инструкция требует перехода если>0
+    And(a=instruction[15], b=instruction[0], out=jgt);
+	And(a=positiveNum,b=notZero,out=posNotZero);
+	And(a=posNotZero, b=jgt, out=doJGT);        //сигнал для выполнения перехода по условию jgt (результат > 0)
+
+	And(a=instruction[15],b=instruction[1],out=jeq);
+	And(a=jeq,b=zr,out=doJEQ);                   //сигнал для выполнения перехода по условию jeq (результат == 0)
+
+	And(a=instruction[15],b=instruction[2],out=jlt);
+	And(a=jlt,b=ng,out=doJLT);                    //сигнал для выполнения перехода по условию jlt (результат < 0)
+
+    // объединяем условия jump
+	Or(a=doJGT,b=doJEQ,out=preFinalJumpSignal);
+	Or(a=doJLT,b=preFinalJumpSignal,out=finalJumpSignal);
+
+    // если сигнал прыжка = 1, то загружаем адрес из регистра A
+    // иначе увеличиваем счетчик (inc=true). 
+	PC(in=AValue,load=finalJumpSignal,inc=true,reset=reset,out[0..14]=pc);
+}

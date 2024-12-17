@@ -1,0 +1,14 @@
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.AssemblyInfoInputs.cache
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.AssemblyInfo.cs
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.csproj.CoreCompileInputs.cache
+D:\work\ChessField\ChessField\bin\Debug\net6.0\ChessField.exe
+D:\work\ChessField\ChessField\bin\Debug\net6.0\ChessField.deps.json
+D:\work\ChessField\ChessField\bin\Debug\net6.0\ChessField.runtimeconfig.json
+D:\work\ChessField\ChessField\bin\Debug\net6.0\ChessField.dll
+D:\work\ChessField\ChessField\bin\Debug\net6.0\ChessField.pdb
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.dll
+D:\work\ChessField\ChessField\obj\Debug\net6.0\refint\ChessField.dll
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.pdb
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ChessField.genruntimeconfig.cache
+D:\work\ChessField\ChessField\obj\Debug\net6.0\ref\ChessField.dll

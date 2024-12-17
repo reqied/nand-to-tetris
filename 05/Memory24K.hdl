@@ -1,0 +1,30 @@
+CHIP Memory24K {
+    IN in[16], load, address[15];
+    OUT out[16];
+
+    PARTS:
+    //делим всю память помолам тк Ram16k ее занимает и от всех остальных отличается в 14 бите
+    DMux(in=load, sel=address[14], a=ram16K, b=restForScreenAndRam4);
+    //разделяем еще раз по 13 биту на экран и остаток
+    DMux(in=restForScreenAndRam4, sel=address[13], a=screen, b=restForKbdAndRam8);
+    //разделяем на второй Ram4, остальное нужно будет разделитить отдельно
+    DMux(in=restForKbdAndRam8, sel=address[12], a=restForKbdAndRam4, b=secondRam4);
+
+    //отличается от клавиатуры единичкой в 1-12 битах
+    Or16Way(in[0..11]=address[0..11], in[12..15]=false, out=KbdOrFirstRam4);
+    //делим по получившемуся sel и получаем клавиатуру и первый Ram4k
+    DMux(in=restForKbdAndRam4, sel=KbdOrFirstRam4, a=keyboard, b=firstRam4);
+
+    //записываем заначения
+    RAM16K(in=in, load=ram16K, address=address[0..13], out=ram16Out);
+    Screen(in=in, load=screen, address=address[0..12], out=screenOut);
+    Keyboard(out=keyboardOut);
+    RAM4K(in=in, load=firstRam4, address=address[0..11], out=firstRam4Out);
+    RAM4K(in=in, load=secondRam4, address=address[0..11], out=secondRam4Out);
+
+    // соединяем все в обратном порядке
+    Mux16(a=keyboardOut, b=firstRam4Out, sel=KbdOrFirstRam4, out=kbdOrFirstRam4Out);
+    Mux16(a=kbdOrFirstRam4Out, b=secondRam4Out, sel=address[12], out=kbdOrRam4Out);
+    Mux16(a=screenOut, b=kbdOrRam4Out, sel=address[13], out=kbdOrFirstRam4orScreenOut);
+    Mux16(a=ram16Out, b=kbdOrFirstRam4orScreenOut, sel=address[14], out=out);
+}

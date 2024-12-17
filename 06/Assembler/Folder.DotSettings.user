@@ -1,0 +1,64 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003AC_0021_003FUsers_003Faekis_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F967970eb58b63e4977b87c01850b7af6afd5431576aa402786bd2d7aee5e95_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AString_002EManipulation_002Ecs_002Fl_003AC_0021_003FUsers_003Faekis_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fe7e231682be8652744726acc6de35323daa68061429db55e0c251114902f60_003FString_002EManipulation_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5f4ff1c8_002D92bf_002D487f_002Da286_002Dc2cf236c8d55/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="HackTranslatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=94fdc156_002D9eb4_002D4dc2_002D8f31_002D820b6cd2122f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Clean" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("",[])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("// comment",[])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("\n\n",[])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("@a",["@a"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("@123",["@123"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("(abc)",["(abc)"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("D=M+D",["D=M+D"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("@a//sdfsdf",["@a"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("@123//sdfadsf",["@123"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("(abc)//asdfasf",["(abc)"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("D=M+D// sdadf",["D=M+D"])&lt;/TestId&gt;&#xD;
+    &lt;TestId xml:space="preserve"&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("  @a  //  sdf  sdf",["@a"])&lt;/TestId&gt;&#xD;
+    &lt;TestId xml:space="preserve"&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("  @123   //  sdf  adsf",["@123"])&lt;/TestId&gt;&#xD;
+    &lt;TestId xml:space="preserve"&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("  (abc)  //  asd  fasf",["(abc)"])&lt;/TestId&gt;&#xD;
+    &lt;TestId xml:space="preserve"&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean("  D  =  M  +  D  // sda  df",["D=M+D"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean(" \nD=M",["D=M"])&lt;/TestId&gt;&#xD;
+    &lt;TestId xml:space="preserve"&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.ParserTests.Clean(" // hello\n (asd)\n@asd // assd\n\n\nD  =M+  D  // sda  df\n\n",["(asd)", "@asd", "D=M+D"])&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.SymbolAnalyzerTests.HasPredefinedSymbols&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("M=A","1110110000001000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=M","1111110000010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("A=D","1110001100100000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("AMD=D","1110001100111000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D;JMP","1110001100000111")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D;JLT","1110001100000100")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D;JGE","1110001100000011")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D;JEQ","1110001100000010")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D;JNE","1110001100000101")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=0","1110101010010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=1","1110111111010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=-1","1110111010010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=D+M","1111000010010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=D-A","1110010011010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=D&amp;amp;M","1111000000010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=D|A","1110010101010000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("AMD=0;JLE","1110101010111110")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("D=D+1;JGT","1110011111010001")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.CInstruction("0;JMP","1110101010000111")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.TranslateSampleProgram&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.TranslateSampleProgram("Add.asm")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.TranslateSampleProgram("Max.asm")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.TranslateSampleProgram("Rect.asm")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.TranslateSampleProgram("Pong.asm")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction("@0","0000000000000000")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction("@1","0000000000000001")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction("@2","0000000000000010")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction("@32767","0111111111111111")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction("@B","0000000000000001")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests.AInstruction("@abc","0000000000101010")&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::EF868EA6-91CF-5FAF-0201-435629F9C11F::net6.0::Assembler.Tests.HackTranslatorTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

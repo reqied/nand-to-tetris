@@ -1,0 +1,16 @@
+// This file is part of www.nand2tetris.org
+/**
+ * 16-bit incrementer:
+ * out = in + 1 (arithmetic addition)
+ */
+
+CHIP Inc16 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    Inc8(in=in[0..7], out=out[0..7], carryOut=carry7);
+    Inc8(in=in[8..15], out=t1, carryOut=co1);
+    Mux16(a[8..15]=in[8..15], b[8..15]=t1, sel=carry7, out[8..15]=out[8..15]);
+    
+    }
